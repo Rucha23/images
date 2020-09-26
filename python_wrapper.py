@@ -52,6 +52,16 @@ def __kill_process():
     pid = int(stdout.decode().strip().split(' ')[-1])
     os.kill(pid, signal.SIGTERM)
     
+#     port = 1234
+# process = Popen(["lsof", "-i", ":{0}".format(port)], stdout=PIPE, stderr=PIPE)
+# stdout, stderr = process.communicate()
+# for process in str(stdout.decode("utf-8")).split("\n")[1:]:       
+#     data = [x for x in process.split(" ") if x != '']
+#     if (len(data) <= 1):
+#         continue
+
+#     os.kill(int(data[1]), signal.SIGKILL)
+    
 
 if args['mode'].upper() == 'START':
     try:
